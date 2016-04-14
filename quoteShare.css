@@ -1,0 +1,53 @@
+#tooltip {
+	background: #ffffff;
+	border: 1px solid #E8E8E8;
+	border-radius: 1px;
+	padding: 4px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	width: 92px;
+	height: 28px;
+	position: absolute;
+	transition: opacity 1s ease-out;
+}
+
+	#tooltip:after, #tooltip:before {
+		top: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+
+	#tooltip:after {
+		border-color: rgba(255, 255, 255, 0);
+		border-top-color: #ffffff;
+		border-width: 10px;
+		margin-left: -10px;
+	}
+
+	#tooltip:before {
+		border-color: rgba(232, 232, 232, 0);
+		border-top-color: #E8E8E8;
+		border-width: 11px;
+		margin-left: -11px;
+	}
+
+.tooltip2 #svgWhatsapp {
+	display: none;
+}
+
+.tooltip1 #svgMark {
+	display: none;
+}
+
+svg {
+	margin: 2px;
+	display: inline;
+}
+
+#highlight {
+	background-color: #FF9;
+}
