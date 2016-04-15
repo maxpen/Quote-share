@@ -75,7 +75,7 @@ function changeVisability(visible) {
 }
 
 function setLinks() {
-    var text = getSelectionText()
+    var text = getSelectionText(),
     url = document.URL;
 
     document.getElementById("svgFacebook").href = getLink("facebook", text, url);
@@ -107,7 +107,7 @@ function getLink(network, text, url) {
 
         return "String";
     } else if (network == "whatsapp") {
-        return "whatsapp://send?text=\"" + text.encodeURI() + "\" - " + url.encodeURI();
+        return "whatsapp://send?text=\"" + encodeURI(text) + "\" - " + encodeURI(url);
     }
 }
 
