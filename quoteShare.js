@@ -1,3 +1,5 @@
+var isMobile = true;
+
 function textSelected() {
     var selectedText = getSelectionText();
 
@@ -11,6 +13,7 @@ window.addEventListener('load', function () {
         if (document.getElementById("tooltip").className == "tooltip1") {
             document.getElementById("tooltip").className = "tooltip2";
         }
+        isMobile = false;
         textSelected()
     }, false)
     // mobile
@@ -18,6 +21,7 @@ window.addEventListener('load', function () {
         if (document.getElementById("tooltip").className == "tooltip2") {
             document.getElementById("tooltip").className = "tooltip1";
         }
+        isMobile = true;
         textSelected()
     }, false)
 
@@ -65,7 +69,11 @@ function changeVisability(visible) {
         setLinks();
         setTimeout(function () {
             tooltip.style.left = coords.x - 53 + 'px';
-            tooltip.style.top = coords.y + window.pageYOffset - 46 + 'px';
+            if (isMobile) {
+                tooltip.style.top = coords.y + window.pageYOffset + 24 + 'px';
+            } else {
+                tooltip.style.top = coords.y + window.pageYOffset - 46 + 'px';
+            }
             tooltip.style.display = 'block';
             fadeIn(tooltip);
         }, 50);
