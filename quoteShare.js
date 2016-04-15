@@ -20,6 +20,13 @@ window.addEventListener('load', function () {
         }
         textSelected()
     }, false)
+
+    document.getElementById("svgMark").addEventListener('mouseover', function () {
+        markText("1");
+    }, false)
+    document.getElementById("svgMark").addEventListener('mousedown', function () {
+        markText("2");
+    }, false)
 }, false)
 
 // from http://stackoverflow.com/a/5379408/5044231
@@ -66,18 +73,30 @@ function changeVisability(visible) {
     }
 }
 
-function setLinks()
-{
+function setLinks() {
     var text = getSelectionText(),
         twitterUrl = text,
         url = document.URL;
 
-    if(twitterUrl.length > 125)
-    {
+    if (twitterUrl.length > 125) {
 
     }
 
     document.getElementById("svgFacebook").href = "www.facebook.com";
     document.getElementById("svgTwitter").href = "www.twitter.com";
     document.getElementById("svgWhatsapp").href = "www.whatsapp.com";
+}
+
+var selection;
+function markText(type) {
+    if (type == "1") {
+        selection = window.getSelection().getRangeAt(0);
+    }
+    if (type == "2") {
+        var selectedText = selection.extractContents();
+        var span = document.createElement("span");
+        span.style.backgroundColor = "yellow";
+        span.appendChild(selectedText);
+        selection.insertNode(span);
+    }
 }
