@@ -87,7 +87,6 @@ function setLinks() {
     url = document.URL;
 
     document.getElementById("svgFacebook").href = getLink("facebook", text, url);
-    // make twitter img https://jsfiddle.net/w4b2xko2/
     document.getElementById("svgTwitter").href = getLink("twitter", text, url);
     document.getElementById("svgWhatsapp").href = getLink("whatsapp", text, url);
 }
