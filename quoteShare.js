@@ -84,6 +84,7 @@ function setLinks() {
     }
 
     document.getElementById("svgFacebook").href = "www.facebook.com";
+    // make twitter img https://jsfiddle.net/w4b2xko2/
     document.getElementById("svgTwitter").href = "www.twitter.com";
     document.getElementById("svgWhatsapp").href = "www.whatsapp.com";
 }
