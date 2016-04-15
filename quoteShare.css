@@ -1,4 +1,4 @@
-.tooltip1 {
+.tooltipGeneral {
 	background: #ffffff;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	border-radius: 1px;
@@ -9,8 +9,7 @@
 	position: absolute;
 }
 
-	.tooltip1:after, .tooltip1:before {
-		bottom: 100%;
+	.tooltipGeneral:after, .tooltipGeneral:before {
 		left: 50%;
 		border: solid transparent;
 		content: " ";
@@ -20,54 +19,40 @@
 		pointer-events: none;
 	}
 
-	.tooltip1:after {
+	.tooltipGeneral:after {
 		border-color: rgba(255, 255, 255, 0);
-		border-bottom-color: #ffffff;
 		border-width: 10px;
 		margin-left: -10px;
 	}
 
-	.tooltip1:before {
+	.tooltipGeneral:before {
 		border-color: rgba(232, 232, 232, 0);
-		border-bottom-color: rgba(0, 0, 0, 0.1);
 		border-width: 11px;
 		margin-left: -11px;
 	}
 
-.tooltip2 {
-	background: #ffffff;
-	border: 1px solid #FBFBFB;
-	border-radius: 1px;
-	padding: 4px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
-	width: 92px;
-	height: 28px;
-	position: absolute;
-}
+    .tooltip1:after, .tooltip1:before {
+		bottom: 100%;
+	}
 
 	.tooltip2:after, .tooltip2:before {
 		top: 100%;
-		left: 50%;
-		border: solid transparent;
-		content: " ";
-		height: 0;
-		width: 0;
-		position: absolute;
-		pointer-events: none;
+	}
+
+    .tooltip1:after {
+		border-bottom-color: #ffffff;
 	}
 
 	.tooltip2:after {
-		border-color: rgba(255, 255, 255, 0);
 		border-top-color: #ffffff;
-		border-width: 10px;
-		margin-left: -10px;
 	}
 
-	.tooltip2:before {
-		border-color: rgba(232, 232, 232, 0);
+	.tooltip1:before {
+		border-bottom-color: #FBFBFB;
+	}
+    
+    .tooltip2:before {
 		border-top-color: #FBFBFB;
-		border-width: 11px;
-		margin-left: -11px;
 	}
 
 .tooltip1 #svgWhatsapp {

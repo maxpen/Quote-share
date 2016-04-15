@@ -10,16 +10,16 @@ window.addEventListener('load', function () {
     changeVisability(false);
     // desktop
     document.body.addEventListener('mouseup', function (e) {
-        if (document.getElementById("tooltip").className == "tooltip1") {
-            document.getElementById("tooltip").className = "tooltip2";
+        if (document.getElementById("tooltip").className == "tooltipGeneral tooltip1") {
+            document.getElementById("tooltip").className = "tooltipGeneral tooltip2";
         }
         isMobile = false;
         textSelected()
     }, false)
     // mobile
     document.body.addEventListener('touchend', function (e) {
-        if (document.getElementById("tooltip").className == "tooltip2") {
-            document.getElementById("tooltip").className = "tooltip1";
+        if (document.getElementById("tooltip").className == "tooltipGeneral tooltip2") {
+            document.getElementById("tooltip").className = "tooltipGeneral tooltip1";
         }
         isMobile = true;
         textSelected()
