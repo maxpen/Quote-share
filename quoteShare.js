@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-var isMobile = false;
-=======
 var isMobile = true;
->>>>>>> refs/remotes/origin/master
 
 function textSelected() {
     var selectedText = getSelectionText();
@@ -14,28 +10,16 @@ window.addEventListener('load', function () {
     changeVisability(false);
     // desktop
     document.body.addEventListener('mouseup', function (e) {
-<<<<<<< HEAD
-        isMobile = false;
-        if (document.getElementById("tooltip").className == "tooltip1") {
-            document.getElementById("tooltip").className = "tooltip2";
-=======
         if (document.getElementById("tooltip").className == "tooltipGeneral tooltip1") {
             document.getElementById("tooltip").className = "tooltipGeneral tooltip2";
->>>>>>> refs/remotes/origin/master
         }
         isMobile = false;
         textSelected()
     }, false)
     // mobile
     document.body.addEventListener('touchend', function (e) {
-<<<<<<< HEAD
-        isMobile = true;
-        if (document.getElementById("tooltip").className == "tooltip2") {
-            document.getElementById("tooltip").className = "tooltip1";
-=======
         if (document.getElementById("tooltip").className == "tooltipGeneral tooltip2") {
             document.getElementById("tooltip").className = "tooltipGeneral tooltip1";
->>>>>>> refs/remotes/origin/master
         }
         isMobile = true;
         textSelected()
@@ -85,15 +69,11 @@ function changeVisability(visible) {
         setLinks();
         setTimeout(function () {
             tooltip.style.left = coords.x - 53 + 'px';
-<<<<<<< HEAD
-            tooltip.style.top = coords.y + window.pageYOffset + 24 + 'px';
-=======
             if (isMobile) {
                 tooltip.style.top = coords.y + window.pageYOffset + 24 + 'px';
             } else {
                 tooltip.style.top = coords.y + window.pageYOffset - 46 + 'px';
             }
->>>>>>> refs/remotes/origin/master
             tooltip.style.display = 'block';
             fadeIn(tooltip);
         }, 50);

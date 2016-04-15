@@ -1,10 +1,6 @@
 .tooltipGeneral {
 	background: #ffffff;
-<<<<<<< HEAD
-	border: 1px solid rgba(0, 0, 0, 0.125);
-=======
 	border: 1px solid rgba(0, 0, 0, 0.1);
->>>>>>> refs/remotes/origin/master
 	border-radius: 1px;
 	padding: 4px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.18);
@@ -13,12 +9,8 @@
 	position: absolute;
 }
 
-<<<<<<< HEAD
-	#tooltip:after, #tooltip:before {
-		bottom: 100%;
-=======
+
 	.tooltipGeneral:after, .tooltipGeneral:before {
->>>>>>> refs/remotes/origin/master
 		left: 50%;
 		border: solid transparent;
 		content: " ";
@@ -30,20 +22,12 @@
 
 	.tooltipGeneral:after {
 		border-color: rgba(255, 255, 255, 0);
-<<<<<<< HEAD
-		border-bottom-color: #ffffff;
-=======
->>>>>>> refs/remotes/origin/master
 		border-width: 10px;
 		margin-left: -10px;
 	}
 
 	.tooltipGeneral:before {
 		border-color: rgba(232, 232, 232, 0);
-<<<<<<< HEAD
-		border-bottom-color: rgba(0, 0, 0, 0.125);
-=======
->>>>>>> refs/remotes/origin/master
 		border-width: 11px;
 		margin-left: -11px;
 	}
