@@ -1,3 +1,5 @@
+var isMobile = false;
+
 function textSelected() {
     var selectedText = getSelectionText();
 
@@ -8,6 +10,7 @@ window.addEventListener('load', function () {
     changeVisability(false);
     // desktop
     document.body.addEventListener('mouseup', function (e) {
+        isMobile = false;
         if (document.getElementById("tooltip").className == "tooltip1") {
             document.getElementById("tooltip").className = "tooltip2";
         }
@@ -15,6 +18,7 @@ window.addEventListener('load', function () {
     }, false)
     // mobile
     document.body.addEventListener('touchend', function (e) {
+        isMobile = true;
         if (document.getElementById("tooltip").className == "tooltip2") {
             document.getElementById("tooltip").className = "tooltip1";
         }
@@ -47,7 +51,7 @@ function getSelectionCoords() {
     var rect = clientRects[0];
 
     var x = rect.left,
-        y = rect.top;
+        y = rect.bottom;
     if (rect.width > 1) {
         x = x + (rect.width / 2);
     }
@@ -65,7 +69,7 @@ function changeVisability(visible) {
         setLinks();
         setTimeout(function () {
             tooltip.style.left = coords.x - 53 + 'px';
-            tooltip.style.top = coords.y + window.pageYOffset - 46 + 'px';
+            tooltip.style.top = coords.y + window.pageYOffset + 24 + 'px';
             tooltip.style.display = 'block';
             fadeIn(tooltip);
         }, 50);
