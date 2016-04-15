@@ -67,7 +67,8 @@ function changeVisability(visible) {
             tooltip.style.left = coords.x - 53 + 'px';
             tooltip.style.top = coords.y + window.pageYOffset - 46 + 'px';
             tooltip.style.display = 'block';
-        }, 200);
+            fadeIn(tooltip);
+        }, 50);
     } else {
         tooltip.style.display = 'none';
     }
@@ -99,4 +100,18 @@ function markText(type) {
         span.appendChild(selectedText);
         selection.insertNode(span);
     }
+}
+
+// from http://youmightnotneedjquery.com/#fade_in
+function fadeIn(el) {
+    el.style.opacity = 0;
+    var last = +new Date();
+    var tick = function () {
+        el.style.opacity = +el.style.opacity + (new Date() - last) / 150;
+        last = +new Date();
+        if (+el.style.opacity < 1) {
+            (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+        }
+    };
+    tick();
 }
