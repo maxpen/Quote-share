@@ -105,8 +105,6 @@ function getLink(network, text, url) {
         var canvas = document.getElementById("twitterCanvas");
         var img = canvas.toDataURL("image/png");
 
-        document.write('<img src="' + img + '"/>');
-
         return "String";
     } else if (network == "whatsapp") {
         return "whatsapp://send?text=\"" + text.encodeURI() + "\" - " + url.encodeURI();
