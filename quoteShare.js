@@ -62,7 +62,7 @@ function changeVisability(visible) {
     var tooltip = document.getElementById('tooltip');
     if (visible == true) {
         var coords = getSelectionCoords();
-        setLinks;
+        setLinks();
         setTimeout(function () {
             tooltip.style.left = coords.x - 53 + 'px';
             tooltip.style.top = coords.y + window.pageYOffset - 46 + 'px';
@@ -75,19 +75,44 @@ function changeVisability(visible) {
 }
 
 function setLinks() {
-    var text = getSelectionText(),
-        twitterUrl = text,
-        url = document.URL;
+    var text = getSelectionText()
+    url = document.URL;
 
-    if (twitterUrl.length > 125) {
-
-    }
-
-    document.getElementById("svgFacebook").href = "www.facebook.com";
+    document.getElementById("svgFacebook").href = getLink("facebook", text, url);
     // make twitter img https://jsfiddle.net/w4b2xko2/
-    document.getElementById("svgTwitter").href = "www.twitter.com";
-    document.getElementById("svgWhatsapp").href = "www.whatsapp.com";
+    document.getElementById("svgTwitter").href = getLink("twitter", text, url);
+    document.getElementById("svgWhatsapp").href = getLink("whatsapp", text, url);
 }
+
+function getLink(network, text, url) {
+    if (network == "facebook") {
+        return "String";
+    }
+    else if (network == "twitter") {
+        var canvas = document.getElementById('twitterCanvas');
+        var context = canvas.getContext('2d');
+        var maxWidth = 400;
+        var lineHeight = 25;
+        var x = (canvas.width - maxWidth) / 2;
+        var y = 40;
+
+        context.font = '16pt Calibri';
+        context.fillStyle = '#333';
+        context.background = '#fbfbfb';
+
+        wrapText(context, text, x, y, maxWidth, lineHeight);
+
+        var canvas = document.getElementById("twitterCanvas");
+        var img = canvas.toDataURL("image/png");
+
+        document.write('<img src="' + img + '"/>');
+
+        return "String";
+    } else if (network == "whatsapp") {
+        return "whatsapp://send?text=\"" + text.encodeURI() + "\" - " + url.encodeURI();
+    }
+}
+
 
 var selection;
 function markText(type) {
@@ -115,4 +140,24 @@ function fadeIn(el) {
         }
     };
     tick();
+}
+
+function wrapText(context, text, x, y, maxWidth, lineHeight) {
+    var words = text.split(' ');
+    var line = '';
+
+    for (var n = 0; n < words.length; n++) {
+        var testLine = line + words[n] + ' ';
+        var metrics = context.measureText(testLine);
+        var testWidth = metrics.width;
+        if (testWidth > maxWidth && n > 0) {
+            context.fillText(line, x, y);
+            line = words[n] + ' ';
+            y += lineHeight;
+        }
+        else {
+            line = testLine;
+        }
+    }
+    context.fillText(line, x, y);
 }
