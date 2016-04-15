@@ -51,7 +51,7 @@ function getSelectionCoords() {
     var rect = clientRects[0];
 
     var x = rect.left,
-        y = rect.bottom;
+        y = rect.top;
     if (rect.width > 1) {
         x = x + (rect.width / 2);
     }
