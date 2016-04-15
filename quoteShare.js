@@ -1,28 +1,19 @@
 function textSelected() {
-    var tooltip = document.getElementById('tooltip'),
-    selectedText = getSelectionText(),
-    coords = getSelectionCoords();
+    var selectedText = getSelectionText();
 
-    if (selectedText != "" && selectedText != " ") {
-        setLinks();
-        setTimeout(function () {
-            tooltip.style.left = coords.x - 53 + 'px';
-            tooltip.style.top = coords.y + window.pageYOffset - 46 + 'px';
-            tooltip.style.display = 'block';
-        }, 500);
-    } else {
-        tooltip.style.display = 'none';
-    }
+    changeVisability(selectedText != "" && selectedText != " ");
 }
 
 window.addEventListener('load', function () {
-    document.getElementById('tooltip').style.display = 'none';
+    changeVisability(false);
+    // desktop
     document.body.addEventListener('mouseup', function (e) {
         if (document.getElementById("tooltip").className == "tooltip1") {
             document.getElementById("tooltip").className = "tooltip2";
         }
         textSelected()
     }, false)
+    // mobile
     document.body.addEventListener('touchend', function (e) {
         if (document.getElementById("tooltip").className == "tooltip2") {
             document.getElementById("tooltip").className = "tooltip1";
@@ -59,6 +50,23 @@ function getSelectionCoords() {
     };
 }
 
+function changeVisability(visible) {
+    var tooltip = document.getElementById('tooltip');
+    if (visible == true) {
+        var coords = getSelectionCoords();
+        setLinks;
+        setTimeout(function () {
+            tooltip.style.left = coords.x - 53 + 'px';
+            tooltip.style.top = coords.y + window.pageYOffset - 46 + 'px';
+            tooltip.style.opacity = 1;
+            tooltip.style.display = 'block';
+        }, 200);
+    } else {
+        tooltip.style.opacity = 0;
+        tooltip.style.display = 'none';
+    }
+}
+
 function setLinks()
 {
     var text = getSelectionText(),
@@ -67,12 +75,10 @@ function setLinks()
 
     if(twitterUrl.length > 125)
     {
-        
+
     }
-    
+
     document.getElementById("svgFacebook").href = "www.facebook.com";
     document.getElementById("svgTwitter").href = "www.twitter.com";
     document.getElementById("svgWhatsapp").href = "www.whatsapp.com";
 }
-
-http://www.facebook.com/sharer.php?s=100&p[title]=a title&p[summary]=a description &p[url]=http://www.linkhere.com&p[images][0]=http://www.linkhere.com/image.jpg

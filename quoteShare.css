@@ -7,7 +7,11 @@
 	width: 92px;
 	height: 28px;
 	position: absolute;
-	transition: opacity 1s ease-out;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+	transition: opacity 1s ease-in-out;
 }
 
 	#tooltip:after, #tooltip:before {
