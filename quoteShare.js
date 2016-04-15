@@ -22,6 +22,7 @@ window.addEventListener('load', function () {
     }, false)
 }, false)
 
+// from http://stackoverflow.com/a/5379408/5044231
 function getSelectionText() {
     var text = "";
     if (window.getSelection) {
@@ -58,11 +59,9 @@ function changeVisability(visible) {
         setTimeout(function () {
             tooltip.style.left = coords.x - 53 + 'px';
             tooltip.style.top = coords.y + window.pageYOffset - 46 + 'px';
-            tooltip.style.opacity = 1;
             tooltip.style.display = 'block';
         }, 200);
     } else {
-        tooltip.style.opacity = 0;
         tooltip.style.display = 'none';
     }
 }
