@@ -75,7 +75,7 @@ function changeVisability(visible) {
 }
 
 function setLinks() {
-    var text = getSelectionText()
+    var text = getSelectionText(),
     url = document.URL;
 
     document.getElementById("svgFacebook").href = getLink("facebook", text, url);
