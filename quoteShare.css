@@ -9,55 +9,56 @@
 	position: absolute;
 }
 
-	.tooltipGeneral:after, .tooltipGeneral:before {
-		left: 50%;
-		border: solid transparent;
-		content: " ";
-		height: 0;
-		width: 0;
-		position: absolute;
-		pointer-events: none;
-	}
+.tooltipGeneral:after, .tooltipGeneral:before {
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
 
-	.tooltipGeneral:after {
-		border-color: rgba(255, 255, 255, 0);
-		border-width: 10px;
-		margin-left: -10px;
-	}
+.tooltipGeneral:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-width: 10px;
+	margin-left: -10px;
+}
 
-	.tooltipGeneral:before {
-		border-color: rgba(232, 232, 232, 0);
-		border-width: 11px;
-		margin-left: -11px;
-	}
+.tooltipGeneral:before {
+	border-color: rgba(232, 232, 232, 0);
+	border-width: 11px;
+	margin-left: -11px;
+}
 
-    .tooltip1:after, .tooltip1:before {
-		bottom: 100%;
-	}
+.tooltip1:after, .tooltip1:before {
+	bottom: 100%;
+}
 
-	.tooltip2:after, .tooltip2:before {
-		top: 100%;
-	}
+.tooltip2:after, .tooltip2:before {
+	top: 100%;
+}
 
-    .tooltip1:after {
-		border-bottom-color: #ffffff;
-	}
+   .tooltip1:after {
+	border-bottom-color: #ffffff;
+}
 
-	.tooltip2:after {
-		border-top-color: #ffffff;
-	}
+.tooltip2:after {
+	border-top-color: #ffffff;
+}
 
-	.tooltip1:before {
-		border-bottom-color: #FBFBFB;
-	}
+.tooltip1:before {
+	border-bottom-color: #FBFBFB;
+}
     
-    .tooltip2:before {
-		border-top-color: #FBFBFB;
-	}
+.tooltip2:before {
+	border-top-color: #FBFBFB;
+}
 
 .tooltip1 #svgWhatsapp {
 	display: normal;
 }
+
 .tooltip2 #svgWhatsapp {
 	display: none;
 }
@@ -65,6 +66,7 @@
 .tooltip1 #svgMark {
 	display: none;
 }
+
 .tooltip2 #svgMark {
 	display: normal;
 }
