@@ -1,8 +1,10 @@
 # Quote share
 
-With Quote share, you can share any text from a textselection to Facebook (as a quote), Twitter (as image) and eaven to Whatsapp (on mobile). You can also highlight text on a site on Desktop!
+With Quote share, you can share any selected text to Facebook (as a quote), Twitter (as image) and even to Whatsapp (on mobile). You can also highlight text on a website on Desktop!
 
-I need help with:
+## Contributing 
+
+I could use your help with:
 
 * Code cleanup
 * Integrating a way to share the selected text to Facebook as a quote ([Facebook quote plugin](https://developers.facebook.com/docs/plugins/quote), [share dialog parameters](https://developers.facebook.com/docs/sharing/reference/share-dialog))
